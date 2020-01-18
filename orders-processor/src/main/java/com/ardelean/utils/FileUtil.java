@@ -28,20 +28,29 @@ public class FileUtil {
 		String errorDirectoryPath = getProperty("input.files.error.path");
 		createDirectory(errorDirectoryPath);
 		File fileDestination = new File(errorDirectoryPath+SEPARATOR+ordersFile.getName());
-		copyFile(ordersFile, fileDestination);
-		ordersFile.delete();
-		System.out.println("File "+ ordersFile + " was moved to error folder");
+		try {
+			copyFile(ordersFile, fileDestination);
+			System.out.println("File "+ ordersFile + " was moved to error folder");
+			ordersFile.delete();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public void moveFileToArhive(File file) {
 		String arhiveDirectoryPath = getProperty("input.files.archive.path");
 		createDirectory(arhiveDirectoryPath);
 		File fileDestination = new File(arhiveDirectoryPath+SEPARATOR+file.getName());
-		copyFile(file, fileDestination);
-		file.delete();
+		try {
+			copyFile(file, fileDestination);
+			file.delete();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 	}
 	
-	private void copyFile(File source, File destination) {
+	private void copyFile(File source, File destination) throws IOException {
 		try (InputStream in = new BufferedInputStream(new FileInputStream(source));
 				OutputStream out = new BufferedOutputStream(new FileOutputStream(destination))) {
 			byte[] buf = new byte[1024];
@@ -55,8 +64,6 @@ public class FileUtil {
 				out.write(buffer, 0, lengthRead);
 				out.flush();
 			}
-		} catch (IOException e) {
-			e.printStackTrace();
 		}
 	}
 	

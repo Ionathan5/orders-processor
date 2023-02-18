@@ -1,8 +1,13 @@
+About:
+    This is a middleware application for ordering systems with the multiple suppliers of electronic products.
+    Company customers can place product orders from various locations and systems and these orders need to be processed and sent to the corresponding suppliers.
+    The orders are sent as XML files on a central server, where the application needs to process them and create the XML files that will be sent to the suppliers.
+
 How to run this application:
     Import this project to your IDE like a Maven project
     Build the project with: mvn clean install 
-    Create directory C:\temp\input and place your input files here (for example orders23.xml)
-    Run App.java from \src\main\java\com\sacom\orders
+    Create directory C:\temp\input and place your input files here (for example orders12.xml)
+    Run App.java from \src\main\java\com\ardelean\App.java
     You can find the processed files in C:\temp\output directory
     
     

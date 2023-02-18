@@ -10,26 +10,25 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "products")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class OutputProducts {
-	
+
     @XmlElement(name = "product")
-	private List<OutputProduct> products;
+    private List<OutputProduct> products;
 
-	public List<OutputProduct> getProducts() {
-		return products;
-	}
+    public List<OutputProduct> getProducts() {
+        return products;
+    }
 
-	public void setProducts(List<OutputProduct> products) {
-		this.products = products;
-	}
+    public void setProducts(List<OutputProduct> products) {
+        this.products = products;
+    }
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("OutputProducts [products=");
-		builder.append(products);
-		builder.append("]");
-		return builder.toString();
-	}
-
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("OutputProducts [products=");
+        builder.append(products);
+        builder.append("]");
+        return builder.toString();
+    }
 }
 

@@ -11,24 +11,23 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class InputOrders {
 
-	@XmlElement(name = "order")
-	private List<InputOrder> orders;
+    @XmlElement(name = "order")
+    private List<InputOrder> orders;
 
-	public List<InputOrder> getOrders() {
-		return orders;
-	}
+    public List<InputOrder> getOrders() {
+        return orders;
+    }
 
-	public void setOrders(List<InputOrder> orders) {
-		this.orders = orders;
-	}
+    public void setOrders(List<InputOrder> orders) {
+        this.orders = orders;
+    }
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Orders [orders=");
-		builder.append(orders);
-		builder.append("]");
-		return builder.toString();
-	}
-
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("Orders [orders=");
+        builder.append(orders);
+        builder.append("]");
+        return builder.toString();
+    }
 }

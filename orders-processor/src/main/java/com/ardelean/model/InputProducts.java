@@ -11,24 +11,23 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class InputProducts {
 
-	@XmlElement(name = "product")
-	private List<InputProduct> products;
+    @XmlElement(name = "product")
+    private List<InputProduct> products;
 
-	public List<InputProduct> getProducts() {
-		return products;
-	}
+    public List<InputProduct> getProducts() {
+        return products;
+    }
 
-	public void setProducts(List<InputProduct> products) {
-		this.products = products;
-	}
+    public void setProducts(List<InputProduct> products) {
+        this.products = products;
+    }
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Products [products=");
-		builder.append(products);
-		builder.append("]");
-		return builder.toString();
-	}
-
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("Products [products=");
+        builder.append(products);
+        builder.append("]");
+        return builder.toString();
+    }
 }
